@@ -1,0 +1,32 @@
+{
+  "name": "api_node_express",
+  "version": "1.0.0",
+  "description": "api champions league com express",
+  "main": "server.ts",
+  "scripts": {
+    "start:dev": "tsx --env-file=.env src/server.ts",
+    "start:watch": "tsx watch --env-file=.env src/server.ts",
+    "dist": "tsup src",
+    "start:dist": "npm run dist && node dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheoOdawara/Api_Node_Express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/TheoOdawara/Api_Node_Express/issues"
+  },
+  "homepage": "https://github.com/TheoOdawara/Api_Node_Express#readme",
+  "dependencies": {
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3"
+  }
+}
