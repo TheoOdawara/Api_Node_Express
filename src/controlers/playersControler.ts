@@ -1,10 +1,15 @@
 import {type Request,type Response } from "express";
-import { getPlayerById } from "../services/getPlayersById.js";
-import { ok } from "../utils/httpHelper.js";
+import { getPlayerService } from "../services/getPlayersService.js";
+import { getPlayerByIdService } from "../services/getPlayerByIdService.js";
+import type { PlayerParams } from "../models/paramsModel.js";
 
 export const getPlayer = async (req: Request, res: Response) => {
-    const data = JSON.stringify(await getPlayerById());
-    const response = await ok(data);
+    const httpResponse = await getPlayerService();
+    return res.status(httpResponse.statusCode).json(httpResponse.body)
+};
 
-   res.status(response.statusCode).json(response.body)
+export const getPlayerById = async (req: Request<PlayerParams>, res: Response)=> {
+    const id = parseInt(req.params.id);
+    const httpResponse = await getPlayerByIdService(id);
+    return res.status(httpResponse.statusCode).json(httpResponse.body);
 };
