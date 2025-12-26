@@ -1,4 +1,6 @@
 import express, {type Request, type Response} from "express";
+import { getPlayer } from "./controlers/playersControler.js";
+import router from "./routes/routes.js";
 
     function createApp(){
         
@@ -6,9 +8,7 @@ import express, {type Request, type Response} from "express";
 
     app.use(express.json());
 
-    app.get("/", (req: Request, res: Response)=> {
-        res.status(200).json({player: "Messi"})
-    })
+    app.use("/api", router);
 
     return app;
 };
