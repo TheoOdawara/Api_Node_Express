@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1, 
+        "name": "Neymar", 
+        "club": "Brasil"
+    },
+    {
+        "id": 2, 
+        "name": "Ronaldo", 
+        "club": "Brasil"
+    },
+    {
+        "id": 3, 
+        "name": "Messi", 
+        "club": "Barcelona"
+    }
+]
+
+
